@@ -1,5 +1,5 @@
 
-import { Company } from './packgeplacement/company';
+import { Company } from './company';
 
 export const COMPANYS: Company[] = [
     {id: 1, name: 'TGW Software Services'},

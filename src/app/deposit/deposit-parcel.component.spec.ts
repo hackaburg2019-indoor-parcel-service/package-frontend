@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PackgeplacementComponent } from './packgeplacement.component';
+import { DepositParcelComponent } from './deposit-parcel.component';
 
-describe('PackgeplacementComponent', () => {
-  let component: PackgeplacementComponent;
-  let fixture: ComponentFixture<PackgeplacementComponent>;
+describe('DepositParcelComponent', () => {
+  let component: DepositParcelComponent;
+  let fixture: ComponentFixture<DepositParcelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PackgeplacementComponent ]
+      declarations: [ DepositParcelComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PackgeplacementComponent);
+    fixture = TestBed.createComponent(DepositParcelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

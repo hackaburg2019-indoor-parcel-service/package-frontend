@@ -19,7 +19,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    MatButtonModule, MatCheckboxModule, DemoMaterialModule, ReactiveFormsModule, FormsModule
+    MatButtonModule, MatCheckboxModule, DemoMaterialModule, ReactiveFormsModule, FormsModule,
+    MatInputModule
   ],
   exports: [RouterModule]
 })

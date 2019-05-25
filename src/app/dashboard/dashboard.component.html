@@ -1,19 +1,47 @@
 
-  <div style="text-align:center">
+<div style="text-align:center">
         <h1>
           Welcome to {{ title }}!
         </h1>
-        <!-- <img width="300" alt="Angular Logo" src="assets/img/parcel-logo.png"> -->
+        <img width="128" alt="Angular Logo" src="assets/img/open-box128.png">
        
-  </div>
+</div>
 
-  <form class="example-form">
-    <button
+<form class="example-form">
+  <button
     mat-fab color="primary"
-    style="width: 200px; height: 200px;"
-    routerLink = "/depositParcel">Deposit parcel!</button>
+    routerLink = "/depositParcel">Deposit parcel!
+  </button>
 
-    <button mat-fab color="primary" 
-    style="width: 200px; height: 200px; margin-left: 75px"   
-    routerLink="/pickUpParcel">Pick up parcel!</button>
+  <button mat-fab color="primary"
+    routerLink="/pickUpParcel">Pick up parcel!
+  </button>
 </form>
+
+<style class="sass">
+.example-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+button {
+  margin-left: 25px;
+  margin-right: 25px;
+  min-width: 150px;
+  max-width: 250px;
+  min-height: 150px;
+  max-height: 250px;
+  margin-bottom: 50px;
+  height: 100%;
+}
+
+</style>
+
+<!--
+<mat-chip-list class="mat-chip-list-stacked">
+  <mat-chip *ngFor="let chip of availableColors" selected [color]="chip.color">
+    {{chip.name}}
+  </mat-chip>
+</mat-chip-list>
+-->

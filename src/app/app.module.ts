@@ -11,11 +11,14 @@ import { RouterModule} from '@angular/router';
 import {ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatNativeDateModule, MatFormFieldModule} from '@angular/material';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from '@angular/common/http';
 import {DemoMaterialModule} from './material-module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PickUpParcelComponent } from './pickup/pick-up-parcel.component';
 import { DepositParcelComponent } from './deposit/deposit-parcel.component';
+import { SidenavComponent } from './shared/sidenav';
 import { CoreModule } from './core';
 
 @NgModule({
@@ -23,7 +26,8 @@ import { CoreModule } from './core';
     AppComponent,
     DashboardComponent,
     PickUpParcelComponent,
-    DepositParcelComponent
+    DepositParcelComponent,
+    SidenavComponent
   ],
   imports: [
     CoreModule,
@@ -37,7 +41,9 @@ import { CoreModule } from './core';
     HttpClientModule,
     DemoMaterialModule,
     MatFormFieldModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSidenavModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,57 @@
+<mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav #sidenav class="sidenav" mode="side" opened
+    [fixedInViewport]="true"
+    >
+  
+      <mat-toolbar>
+        <mat-toolbar-row>
+          <a mat-list-item [routerLink]="['/']">
+              <mat-icon>home</mat-icon>
+              Home
+          </a>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <a mat-list-item [routerLink]="['/pickUpParcel']">
+                <mat-icon>local_post_office</mat-icon>
+                Pick-Up
+            </a>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <a mat-list-item [routerLink]="['/depositParcel']">
+                <mat-icon>inbox</mat-icon>
+                Deliver
+            </a>
+        </mat-toolbar-row>
+      </mat-toolbar>
+  
+      <mat-nav-list>
+        
+        <!-- <a *ngFor="let item of myWorkRoutes"
+          mat-list-item
+          (click)="sidenav.close()"
+          [routerLink]="[item.route]"
+          routerLinkActive="list-item-active">
+          <mat-icon matListIcon> {{ item.icon }} </mat-icon>
+          {{item.title}}
+        </a> -->
+
+
+  
+        <mat-divider></mat-divider>
+  
+      </mat-nav-list>
+  
+    </mat-sidenav>
+  
+    <!-- <mat-sidenav-content>
+      <crm-navigation-bar
+        (toggleSidenav)="sidenav.toggle()">
+      </crm-navigation-bar>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content> -->
+    <mat-sidenav-content class="sidenav-content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  
+  </mat-sidenav-container>

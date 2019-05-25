@@ -1,14 +1,27 @@
 
-  <form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input type="text" matInput [formControl]="companyControll" [matAutocomplete]="auto">
+  <form class="example-form" [formGroup]="formControll" fxLayout="column">
+    <p>
+    <mat-form-field class="example-full-width">
+    <h4>Enter Company</h4>
+    <input type="text" matInput formControlName="companyControll" [matAutocomplete]="auto" width="800">
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let company of filteredCompanys | async" [value]="company.name">
-        <img class="company_icon" [src]="company.logo" height="25" max-width="40">
+        <img class="company_icon" [src]="company.logo" height="25">
         <span>{{company.name}}</span> 
       </mat-option>
     </mat-autocomplete>
-  </mat-form-field>
   
+  </mat-form-field>
+</p> <p>
+  <mat-form-field class="example-full-width">
+      <h4>Select Depositbox</h4>
+      <mat-select>
+          <mat-option *ngFor="let depositbox of depositboxes" [value]="depositbox.value">
+              {{depositbox.displayName}}
+            </mat-option>
+      </mat-select>
+  </mat-form-field>
+</p>
+  <button>OK</button>
   </form>
 

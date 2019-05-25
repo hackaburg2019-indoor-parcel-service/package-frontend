@@ -1,7 +1,7 @@
 
-<div style="text-align:center">
-        <h1>
-          Welcome to {{ title }}!
+<div style="text-align:center; margin-top: 35px; margin-bottom: 35px">
+        <h1 style="margin-top: 35px">
+          Welcome to the {{ title }}!
         </h1>
         <img width="128" alt="Angular Logo" src="assets/img/open-box128.png">
        
@@ -10,13 +10,17 @@
 <form class="example-form">
   <button
     mat-fab color="primary"
-    routerLink = "/depositParcel">Deposit parcel!
+    routerLink = "/depositParcel">
+    <mat-icon style="transform: scale(2)">inbox</mat-icon>
   </button>
 
   <button mat-fab color="primary"
-    routerLink="/pickUpParcel">Pick up parcel!
+    routerLink="/pickUpParcel">
+    <mat-icon style="transform: scale(2)">local_post_office</mat-icon>
   </button>
 </form>
+
+<h3 style="display: flex; justify-content: center; margin-top: 10px"><span>Deposit Parcel</span><span style="margin-left: 90px"> Pick up Parcel</span></h3>
 
 <style class="sass">
 .example-form {
@@ -26,8 +30,8 @@
 }
 
 button {
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 35px;
+  margin-right: 35px;
   min-width: 150px;
   max-width: 250px;
   min-height: 150px;

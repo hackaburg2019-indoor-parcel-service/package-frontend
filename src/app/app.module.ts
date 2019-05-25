@@ -12,6 +12,7 @@ import {ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatNativeDateModule, MatFormFieldModule} from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from '@angular/common/http';
 import {DemoMaterialModule} from './material-module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -41,7 +42,8 @@ import { CoreModule } from './core';
     DemoMaterialModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

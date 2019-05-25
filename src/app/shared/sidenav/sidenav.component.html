@@ -6,13 +6,26 @@
   
       <mat-toolbar>
         <mat-toolbar-row>
-          <h2>test</h2>
+          <a mat-list-item [routerLink]="['/']">
+              <mat-icon>home</mat-icon>
+              Home
+          </a>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <a mat-list-item [routerLink]="['/pickUpParcel']">
+                <mat-icon>local_post_office</mat-icon>
+                Pick-Up
+            </a>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <a mat-list-item [routerLink]="['/depositParcel']">
+                <mat-icon>inbox</mat-icon>
+                Deliver
+            </a>
         </mat-toolbar-row>
       </mat-toolbar>
   
       <mat-nav-list>
-  
-        <h2 matSubheader>test2</h2>
         
         <!-- <a *ngFor="let item of myWorkRoutes"
           mat-list-item
@@ -22,10 +35,8 @@
           <mat-icon matListIcon> {{ item.icon }} </mat-icon>
           {{item.title}}
         </a> -->
-        <a mat-list-item
-        (click)="sidenav.close()">
-        <mat-icon matListIcon>link</mat-icon>
-        </a>
+
+
   
         <mat-divider></mat-divider>
   
@@ -39,11 +50,8 @@
       </crm-navigation-bar>
       <router-outlet></router-outlet>
     </mat-sidenav-content> -->
-    <mat-sidenav-content>
-            <router-outlet>
-  
-   
-                </router-outlet>
+    <mat-sidenav-content class="sidenav-content">
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
   
   </mat-sidenav-container>

@@ -24,10 +24,9 @@ export class DepositParcelComponent implements OnInit {
  //// companyControll = new FormControl();
  // depostiControll = new FormControl();
   formControll = new FormGroup({companyControll: new FormControl(), 
-    depositControll: new FormControl()});
-  //companyControll = new FormControl();
+  depositControll: new FormControl()});
   filteredCompanys: Observable<Company[]>;
-  
+
   public companys: Company[] = [
     {name: 'TGW Software Services', id: 1, logo: 'assets/img/tgw.png'},
     {name: 'Bertrandt', id: 2, logo: 'assets/img/bertrandt.png'},
@@ -39,12 +38,11 @@ export class DepositParcelComponent implements OnInit {
   {id: 4, displayName: 'Depostibox-3'},
   {id: 3, displayName: 'Depostibox-4'}
  ];
- 
- constructor(private deliveryService: DeliveryService,
-  private snackBar: MatSnackBar,
-  private router: Router) {
-   //this.formControll.controls.c
-   
+
+ constructor(
+   private deliveryService: DeliveryService,
+   private snackBar: MatSnackBar,
+   private router: Router) {
    this.filteredCompanys = this.formControll.controls.companyControll.valueChanges
    .pipe(
      startWith(''),
@@ -53,7 +51,7 @@ export class DepositParcelComponent implements OnInit {
  }
   ngOnInit() {
   }
-  private _filterCompany(value: String): Company[] {
+  private _filterCompany(value: string): Company[] {
     const filtrVal = value.toString();
     return this.companys.filter(company => company.name.toLowerCase().indexOf(filtrVal) == 0);
   }
@@ -67,7 +65,7 @@ export class DepositParcelComponent implements OnInit {
       };
       this.deliveryService.createDelivery(newPickup).subscribe((res) => {
         console.log('success');
-        this.snackBar.open('successful opened', 'Close', {
+        this.snackBar.open('successful deployed', 'Close', {
           duration: 2000
         }
         );

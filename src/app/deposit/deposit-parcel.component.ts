@@ -12,7 +12,7 @@ export interface Company {
   logo: string;
 }
 export interface Depositbox {
-  value: number;
+  id: number;
   displayName: string;
 }
 @Component({
@@ -34,15 +34,15 @@ export class DepositParcelComponent implements OnInit {
     {name: 'Diovision', id: 3, logo: 'assets/img/diovision.png' }
  ];
  public depositboxes: Depositbox[] = [
-  {value: 1, displayName: 'Depostibox-1'},
-  {value: 2, displayName: 'Depostibox-2'},
-  {value: 4, displayName: 'Depostibox-3'},
-  {value: 3, displayName: 'Depostibox-4'}
+  {id: 1, displayName: 'Depostibox-1'},
+  {id: 2, displayName: 'Depostibox-2'},
+  {id: 4, displayName: 'Depostibox-3'},
+  {id: 3, displayName: 'Depostibox-4'}
  ];
- private deliveryService: DeliveryService;
- private snackBar: MatSnackBar;
- private router: Router;
- constructor() {
+ 
+ constructor(private deliveryService: DeliveryService,
+  private snackBar: MatSnackBar,
+  private router: Router) {
    //this.formControll.controls.c
    
    this.filteredCompanys = this.formControll.controls.companyControll.valueChanges
@@ -59,9 +59,11 @@ export class DepositParcelComponent implements OnInit {
   }
   onFormSubmit() {
     if (this.formControll.valid) {
+      console.log(this.formControll.get('companyControll').value);
+      console.log(this.formControll.get('depositControll').value);
       const newPickup: IApiPostDelivery = {
-        customer: this.formControll.controls.companyControll.value.name,
-        locker: this.formControll.controls.depositControll.value.value
+        customer: this.formControll.get('companyControll').value,
+        locker: this.formControll.get('depositControll').value
       };
       this.deliveryService.createDelivery(newPickup).subscribe((res) => {
         console.log('success');

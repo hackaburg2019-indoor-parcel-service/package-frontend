@@ -1,5 +1,5 @@
 
-  <form class="example-form" [formGroup]="formControll" fxLayout="column">
+  <form class="example-form" [formGroup]="formControll" fxLayout="column" (ngSubmit)="onFormSubmit()">
     <p>
     <mat-form-field class="example-full-width">
     <h4>Enter Company</h4>
@@ -15,13 +15,13 @@
 </p> <p>
   <mat-form-field class="example-full-width">
       <h4>Select Depositbox</h4>
-      <mat-select>
-          <mat-option *ngFor="let depositbox of depositboxes" [value]="depositbox.value">
+      <mat-select formControlName="depositControll">
+          <mat-option *ngFor="let depositbox of depositboxes" [value]="depositbox.id">
               {{depositbox.displayName}}
             </mat-option>
       </mat-select>
   </mat-form-field>
 </p>
-  <button>OK</button>
+<button class="button" mat-raised-button color="primary">Submit</button>
   </form>
 

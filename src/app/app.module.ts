@@ -8,23 +8,25 @@ import {MatButtonModule} from '@angular/material/button';
 
 import { RouterModule} from '@angular/router';
 
-import {ReactiveFormsModule, FormsModule } from '@angular/forms'
+import {ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatNativeDateModule, MatFormFieldModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
-import {DemoMaterialModule} from './material-module'
+import {DemoMaterialModule} from './material-module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PickUpParcelComponent } from './pickup/pick-up-parcel.component';
 import { DepositParcelComponent } from './deposit/deposit-parcel.component';
+import { CoreModule } from './core';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent, 
+    DashboardComponent,
     PickUpParcelComponent,
     DepositParcelComponent
-    
   ],
   imports: [
+    CoreModule,
     BrowserModule,
     MatNativeDateModule,
     FormsModule,
@@ -33,8 +35,9 @@ import { DepositParcelComponent } from './deposit/deposit-parcel.component';
     RouterModule,
     ReactiveFormsModule,
     HttpClientModule,
-    DemoMaterialModule, MatFormFieldModule,
-   
+    DemoMaterialModule,
+    MatFormFieldModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

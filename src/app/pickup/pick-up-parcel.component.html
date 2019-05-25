@@ -2,7 +2,20 @@
   <h2>To pick up a parcel enter your token below</h2>
 </div>
 
-<form class="example-form">
+
+<form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+  <mat-form-field class="example-full-width">
+    <input matInput formControlName="token" placeholder="Enter Token">
+    <mat-error>
+      <span *ngIf="userForm?.controls.user_input?.errors?.required">Required Field</span>
+      <span *ngIf="userForm?.controls.user_input?.errors?.pattern">Only numbers allowed</span>
+      <span *ngIf="userForm?.controls.user_input?.errors?.minLength">Minimum Length is 4</span>
+      <span *ngIf="userForm?.controls.user_input?.errors?.maxLength">Maximum Length is 4</span>
+    </mat-error>
+  </mat-form-field>
+  <button class="button" mat-raised-button color="primary">Submit</button>
+</form>
+<!-- <form class="example-form">
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Token:" value="e.g. 1234">
 
@@ -14,4 +27,4 @@
     routerLink = "/depositParcel">Okay!
   </button>
 
-</form>
+</form> -->
